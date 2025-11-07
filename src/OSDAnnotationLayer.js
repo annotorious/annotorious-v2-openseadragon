@@ -707,7 +707,7 @@ export class AnnotationLayer extends EventEmitter {
           element: this.svg,
 
           preProcessEventHandler: info => {
-            info.stopPropagation = true;
+            info.stopPropagation = info.eventType !== "wheel";
             info.preventDefault = false;
             info.preventGesture = true;
           }
